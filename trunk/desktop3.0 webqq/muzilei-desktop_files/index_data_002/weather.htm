@@ -1,0 +1,164 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head id="Head1">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><link rel="stylesheet" type="text/css" href="weather_data/widget.css"><link id="linkCSS" rel="stylesheet" type="text/css" href="weather_data/5.css"><title>
+	ThinkPage Weather
+</title>
+    <script type="text/javascript">
+        /* Baidu */
+        var _hmt = _hmt || [];
+        /* ThinkPage Weather */
+        thinkpage_weather_req = {"AutoCity":true,"BackgroundColor":"transparent","BorderColor":"none","City":"CHXX0249","CityId":"101030100","CityName":null,"DisplayCitySelect":1,"DisplayCurrent":true,"DisplayInfo":true,"DisplayTitle":true,"FontColor":"#C9C9C9","ForecastDays":3,"Language":"zh-CHS","LinksType":2,"Provider":"CMA","Skin":"5","Source":"www.muzilei.com","Test":null,"Type":"iframe","Unit":"C","User":""};
+        thinkpage_weather_res = null;
+        thinkpage_weather_vip = false;
+        thinkpage_weather_source = "www.muzilei.com";
+    </script>
+    <meta http-equiv="refresh" content="1800"></head>
+<body>
+    <div id="weatherAJAX">
+<style type="text/css">
+    a, a:hover, a:visited {color:#C9C9C9;}
+</style>
+<div id="tp-weather-widget" style="color:#C9C9C9; background-color:transparent; border:none; zoom:1;">
+    <div style="display: block;" id="loading" class="corner-all">读取中</div>
+    <div id="divAD" class="corner-all adbox">
+        <div id="closeAD">关闭</div>
+        <!--<a href="http://www.shenhua-cn.com" target="_blank"><img alt="" src="http://image.thinkpage.cn/weather/images/AD/shenhua.jpg" border="0" /></a>-->
+        <iframe class="zfix"></iframe>
+    </div>
+    <div id="divCurrentWeather" class="clearfix linkBody" style="padding:5px; border-bottom: dotted 1px #999999; overflow:hidden;">
+        <div style="position:absolute; left:50%; top:-53px; margin-left:-90px; width:180px; z-index:0;"><a class="linkCity" href="" target="_blank"><img src="weather_data/blank.gif" style="width:180px;height:180px;" class="weatherIcon currentIcon" title="" alt=""></a></div>
+        <div style="position:absolute; right:5px; top:60px; z-index:10; line-height:36px;">
+            <span style="font-weight:bold; font-size:36px; font-family:Microsoft YaHei"><span id="ltlTemperature"><span class="temp"></span></span>°</span>
+        </div>
+        <div style="float:left; line-height:150%; text-align:left; margin-top:60px;">
+            <a class="linkCity" href="" target="_blank"><span id="ltlCity" class="cityName"></span></a>
+            <span id="ltlText"></span>
+            <img src="weather_data/blank_002.gif" id="btnAD" class="icon icon_info" style="vertical-align:middle; cursor:pointer; display:none;"><br>
+            <span id="ltlSpeed"><strong>风力</strong>:<span class="value"></span>级</span>
+            <span id="ltlHumidity"><strong>湿度</strong>:<span class="value"></span>%</span>
+        </div>
+    </div>
+    <div id="divForecastWeather" class="linkBody" style="padding:5px; border-bottom: dotted 1px #999999;">
+        <table border="0" cellpadding="0" cellspacing="0" width="100%;">
+            <tbody><tr class="forecast" style="height:30px; line-height:30px;">
+                <td style="text-align:left;"><div class="forecastDay"></div></td>
+                <td style="text-align:center;"><a class="linkCity" href="" target="_blank"><img src="weather_data/blank.gif" style="width:61px;height:34px;" class="weatherIcon forecastIcon" title="" alt=""></a></td>
+                <td style="text-align:right;"><div class="forecastTemp" style="text-align:right;" title=""><span class="temp high"></span>/<span class="temp low"></span>°<span class="unit"></span></div></td>
+            </tr>
+        </tbody></table>
+    </div>
+    
+<div id="divOverlay" style="position:absolute; left:0; top:0; width:100%; height:1000px; background-color:#fff; z-index:3999; display:none;"></div>
+<div id="divSelector" class="selector">
+    <form method="post" action="weather.aspx" id="form1" onsubmit="return false;">
+<div class="aspNetHidden">
+<input name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUBMA9kFgJmD2QWBAIBD2QWBgIBDw8WAh4EVGV4dAUaPHNwYW4gY2xhc3M9J3RlbXAnPjwvc3Bhbj5kZAIJDw8WAh8ABTY8c3Ryb25nPumjjuWKmzwvc3Ryb25nPjo8c3BhbiBjbGFzcz0ndmFsdWUnPjwvc3Bhbj7nuqdkZAILDw8WAh8ABTQ8c3Ryb25nPua5v+W6pjwvc3Ryb25nPjo8c3BhbiBjbGFzcz0ndmFsdWUnPjwvc3Bhbj4lZGQCBA9kFgICAw8WAh4HVmlzaWJsZWhkZEVN1hautSTNR0KY4erGv4qiy29U6xceTM1PGvVzjt+s" type="hidden">
+</div>
+
+    <script language="javascript" type="text/javascript">
+        var tp_weather_widget_search_tip = '搜索城市中文或拼音';
+        var forceImplicitSelector = false;
+    </script>
+    <div id="btnToggle" style="cursor:pointer; float:left; margin:2px 3px 0 0;"><div class="icon icon_search"></div></div>
+    <div id="divSelectCity" style="float:left;">
+        <select name="ctl00$WeatherSelector$ddlL1" id="ddlL1" onchange="ThinkPage.Weather.API.GetChildLocations(this.value, 2, ThinkPage.Weather.Widget.onGetChildLocations)" style="width:50px;">
+	<option selected="selected" value="01">直辖市</option>
+	<option value="32">特别行政区</option>
+	<option value="34">台湾</option>
+	<option value="05">黑龙江</option>
+	<option value="06">吉林</option>
+	<option value="07">辽宁</option>
+	<option value="08">内蒙古</option>
+	<option value="09">河北</option>
+	<option value="18">河南</option>
+	<option value="10">山西</option>
+	<option value="12">山东</option>
+	<option value="19">江苏</option>
+	<option value="21">浙江</option>
+	<option value="23">福建</option>
+	<option value="24">江西</option>
+	<option value="22">安徽</option>
+	<option value="20">湖北</option>
+	<option value="25">湖南</option>
+	<option value="28">广东</option>
+	<option value="30">广西</option>
+	<option value="31">海南</option>
+	<option value="26">贵州</option>
+	<option value="29">云南</option>
+	<option value="27">四川</option>
+	<option value="14">西藏</option>
+	<option value="11">陕西</option>
+	<option value="17">宁夏</option>
+	<option value="16">甘肃</option>
+	<option value="15">青海</option>
+	<option value="13">新疆</option>
+
+</select>
+        <select name="ctl00$WeatherSelector$ddlL2" id="ddlL2" onchange="ThinkPage.Weather.API.GetChildLocations(this.value, 3, ThinkPage.Weather.Widget.onGetChildLocations)" style="width:50px;">
+	<option value="0101">北京</option>
+	<option value="0201">上海</option>
+	<option selected="selected" value="0301">天津</option>
+	<option value="0401">重庆</option>
+
+</select>
+        <select name="ctl00$WeatherSelector$ddlL3" id="ddlL3" onchange="ThinkPage.Weather.API.GetWeather(this.value, ThinkPage.Weather.Widget.Render)" style="width:50px;">
+	<option selected="selected" value="101030100">天津</option>
+	<option value="101030200">武清</option>
+	<option value="101030300">宝坻</option>
+	<option value="101030400">东丽</option>
+	<option value="101030500">西青</option>
+	<option value="101030600">北辰</option>
+	<option value="101030700">宁河</option>
+	<option value="101030800">汉沽</option>
+	<option value="101030900">静海</option>
+	<option value="101031000">津南</option>
+	<option value="101031100">塘沽</option>
+	<option value="101031200">大港</option>
+	<option value="101031400">蓟县</option>
+
+</select>
+    </div>
+    <div id="divSearchCity" style="float:left; display:none;">
+        <input id="txtSearch" style="width:148px; color:#C6C6C6;" value="搜索城市中文或拼音" type="text">
+    </div>
+    <input id="btnConfirm" title="确定" value="确定" type="button">
+    
+    
+    
+    
+<div class="aspNetHidden">
+
+	<input name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/wEWMAK89dXwBgLn5pH0CwL65pX0CwL65q30CwLn5qH0CwLn5qX0CwLn5rn0CwLn5v33CwLn5vH3CwL45v33CwL45p30CwL45pX0CwL45vH3CwL55pH0CwL55qn0CwL55q30CwL55pX0CwL55p30CwL55qH0CwL55v33CwL65p30CwL65pH0CwL55qX0CwL55vH3CwL55rn0CwL45q30CwL45pH0CwL45rn0CwL45qX0CwL45qH0CwL45qn0CwL2juyoCgL2juioCgL2jvSoCgL2jvCoCgLslsG9CgLTj+fSDAK2+YXHBgL1mLTSCQLY8crIAwK/6+j9BQKixI6SDgLh4739BgLE3NOTCwKJvacGAuyWxbwKAtOP29EMAvWYqNEJGagzKEOy/x+o1G++u5Qw/jmTTVFvoxpU9EvXQ38li60=" type="hidden">
+</div></form>
+</div>
+    <div class="clearfix" style="width:90px; margin:0 auto; text-align:center;">
+        
+<div class="info" id="divInfo">
+
+<div style="margin:0 auto;">
+    <a id="hlAD" href="http://www.coolgy.com/" target="_blank">爽爽的贵阳提醒您注意天气变化</a>
+</div>
+
+
+</div>
+        
+<span id="divShareLink" style="">
+    [<a id="hlShare" target="_blank">分享</a>]
+</span>
+<span id="divShareButtons">
+    <img id="sinaButton" src="weather_data/transparent.gif" style="background: url('http://img.t.sinajs.cn/t35/appstyle/opent/images/app/btn_trans.gif?id=201104131414') repeat scroll 0 0 transparent;background-position: 0 -56px;height: 16px;width: 16px; cursor:pointer" alt="">
+    <img id="tencentButton" src="weather_data/weiboicon16.png" alt="" style="cursor:pointer" border="0">
+</span>
+    </div>
+    <span id="cip" style="display:none">http://image.thinkpage.cn/weather/images/icons/{CODE}.png</span>
+    <span id="fip" style="display:none">http://l.yimg.com/a/i/us/nws/weather/gr/{CODE}s.png</span>
+    
+<script type="text/javascript">
+    var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+    document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F317d1e4c0df1ea09912e5f05c5999d7f' type='text/javascript'%3E%3C/script%3E"));
+</script><script src="weather_data/h.js" type="text/javascript"></script>
+</div></div>
+    <script type="text/javascript" src="weather_data/jquery-1.js"></script>
+    <script src="weather_data/weather.js" type="text/javascript"></script>
+
+</body></html>

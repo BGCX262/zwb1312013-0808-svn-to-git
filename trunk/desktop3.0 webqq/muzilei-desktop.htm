@@ -1,0 +1,384 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>muzilei-desktop 3.0 桌面</title>
+<script type="text/javascript" src="muzilei-desktop_files/jquery-1.js"></script>
+<script type="text/javascript" src="muzilei-desktop_files/myDesktopBase.js"></script>
+<link type="text/css" rel="stylesheet" href="muzilei-desktop_files/reset-min.css">
+<link type="text/css" rel="stylesheet" href="muzilei-desktop_files/myWindow.css">
+<link type="text/css" rel="stylesheet" href="muzilei-desktop_files/desktop.css">
+<link type="text/css" rel="stylesheet" href="muzilei-desktop_files/desktopBar.css">
+<link type="text/css" rel="stylesheet" href="muzilei-desktop_files/slideBar.css">
+<link type="text/css" rel="stylesheet" href="muzilei-desktop_files/widget.css">
+<link type="text/css" rel="stylesheet" href="muzilei-desktop_files/loginBox.css">
+<link type="text/css" rel="stylesheet" href="muzilei-desktop_files/appManager.css">
+<link type="text/css" rel="stylesheet" href="muzilei-desktop_files/jquery-ui.css">
+<script language="javascript" type="text/javascript" src="muzilei-desktop_files/jquery-ui-1.js"></script>
+<script language="javascript" type="text/javascript" src="muzilei-desktop_files/jquery_002.js"></script>
+<script language="javascript" type="text/javascript" src="muzilei-desktop_files/jquery_005.js"></script>
+<script language="javascript" type="text/javascript" src="muzilei-desktop_files/jquery.js"></script>
+<script language="javascript" type="text/javascript" src="muzilei-desktop_files/jquery_004.js"></script>
+<script language="javascript" type="text/javascript" src="muzilei-desktop_files/jquery_003.js"></script>
+<script language="javascript" type="text/javascript" src="muzilei-desktop_files/jquery-smartMenu.js"></script>
+<link type="text/css" rel="stylesheet" href="muzilei-desktop_files/smartMenu.css">
+<script language="javascript" type="text/javascript" src="muzilei-desktop_files/myDesktop.js"></script>
+<script type="text/javascript" src="muzilei-desktop_files/myDesktopInit.js"></script>
+<!--[if IE 6]> <script type="text/javascript" src="lib/js/jquery/DD_belatedPNG_0.0.8a.js" ></script> <script type="text/javascript">   
+DD_belatedPNG.fix('.dock_middle,.dock_pos_right #start_item .item li b,#shizhong_btn,#weather_btn,#showZm_btn,#them_btn,#start_btn,#start_item,#start_item .item li:hover,#start_item .item li span,#start_item .item li b,#start_item .childItem,#default_app .btnOver,.dock_drap_effect,.myWidget,.innerWidgetTitle,.widgetClose,.widgetClose:hover,.ui_boxyClose,.login_logo,#navBar s,#navBar span,#navBar span a,#navBar a.currTab,.indicator_header,.indicator_manage,.desktop,#bottomBarBgTask,.taskItem,.taskItem:hover,.taskCurrent .taskItem:hover,.taskCurrent .taskItem ,.taskPreBox,.taskPre,.taskNextBox,.taskNext,.aMg_dock_container,.aMg_line_y,.aMg_folder_container,.aMg_close,.aMg_close:hover,#aMg_prev,#aMg_next,.folderInner .desktopIcon .icon .txInfo,.folderInner .hover');
+</script><![endif]-->
+</head>
+<body>
+<div id="wallpaper"><img style="width: 1600px; height: 745px;" src="muzilei-desktop_files/wallpaper.jpg"></div>
+<div id="desktopWrapper">
+  <div style="display: none;" id="topBar"></div>
+  <div style="display: block;" id="leftBar">
+    <div id="dockContainer" class="dock_container dock_pos_left">
+      <div class="dock_middle">
+        <div class="ui-droppable" id="default_app">
+          <div class="desktopIcon ui-draggable ui-droppable" id="myblog"><span class="icon"><img src="muzilei-desktop_files/icon1.png" title="我的博客"></span>
+            <div class="text"><span>我的博客</span><s></s></div>
+          </div>
+          <div class="desktopIcon ui-draggable ui-droppable" id="abus"><span class="icon"><img src="muzilei-desktop_files/icon2.png" title="关于我"></span>
+            <div class="text"><span>关于我</span><s></s></div>
+          </div>
+          <div class="desktopIcon ui-draggable ui-droppable" id="works"><span class="icon"><img src="muzilei-desktop_files/icon3.png" title="作品"></span>
+            <div class="text"><span>作品</span><s></s></div>
+          </div>
+          <div class="desktopIcon ui-draggable ui-droppable" id="ziyuan"><span class="icon">
+            <div class="txInfo">25</div>
+            <img src="muzilei-desktop_files/icon11.png" title="资源分享"></span>
+            <div class="text"><span>资源分享</span><s></s></div>
+          </div>
+        </div>
+        <div class="default_tools"> <a href="javascript:void(0);" id="showZm_btn" title="全屏"></a><a href="javascript:void(0);" id="shizhong_btn" title="时钟"></a> </div>
+        <div class="default_tools"> <a href="javascript:void(0);" id="weather_btn" title="天气"></a> <a href="javascript:void(0);" id="them_btn" title="主题"></a></div>
+        <div id="start_block"> <a title="开始" id="start_btn"></a>
+          <div id="start_item">
+            <ul class="item admin">
+              <li><span class="adminImg"></span> Muzi*lie</li>
+            </ul>
+            <ul class="item">
+              <li id="item0"><span><img src="muzilei-desktop_files/item0.png">系统设置</span></li>
+              <div class="line"></div>
+              <li id="item1"><span><img src="muzilei-desktop_files/item1.png">使用指南</span><b></b>
+                <ul class="item childItem">
+                  <li id="item1_0"><span><img src="muzilei-desktop_files/item0.png">系统设置</span></li>
+                  <div class="line"></div>
+                  <li id="item1_1"><span><img src="muzilei-desktop_files/item3.png">退出系统</span><b></b>
+                    <ul class="item childItem">
+                      <li id="item1_1_0"><span><img src="muzilei-desktop_files/item3.png">关于我们</span></li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li id="item1"><span><img src="muzilei-desktop_files/item2.png">主题设置</span></li>
+              <div class="line"></div>
+              <li id="item3"><span><img src="muzilei-desktop_files/item3.png">退出系统</span><b></b>
+                <ul class="item childItem">
+                  <li id="item1_3_0"><span><img src="muzilei-desktop_files/item3.png">关于我们</span></li>
+                </ul>
+              </li>
+              <div class="line"></div>
+              <li id="item4"><span><img src="muzilei-desktop_files/item3.png">关于我们</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div style="display: none;" id="rightBar"></div>
+  <div class="dock_drap_effect dock_drap_effect_top"></div>
+  <div class="dock_drap_effect dock_drap_effect_left"></div>
+  <div class="dock_drap_effect dock_drap_effect_right"></div>
+  <div class="dock_drap_mask">
+    <div name="top" class="dock_drop_region_top"></div>
+    <div name="left" class="dock_drop_region_left"></div>
+    <div name="right" class="dock_drop_region_right"></div>
+  </div>
+  <div style="width: 1527px; height: 0px; left: 73px; top: 40px;" id="desktopsContainer">
+    <div style="width: 1527px; height: 623px;" id="desktopContainer">
+      <div style="width: 1527px; height: 623px;" class="desktop ui-draggable" id="desktop1">
+        <div tabindex="5000" style="width: 1137px; height: 623px; overflow-y: hidden;" class="outerDesktop">
+          <div style="transform: translate3d(0px, 0px, 0px);" class="innerDesktop ui-droppable">
+            <div style="position: absolute; margin: 0px; left: 30px; top: 20px;" class="desktopIcon ui-draggable ui-droppable" id="kuwoMusic"><span class="icon">
+              <div class="txInfo">8</div>
+              <img src="muzilei-desktop_files/icon8.png" title="酷我音乐盒"></span>
+              <div class="text"><span>酷我音乐盒</span><s></s></div>
+            </div>
+            <div style="position: absolute; margin: 0px; left: 30px; top: 133px;" class="desktopIcon ui-draggable ui-droppable" id="hudong"><span class="icon"><img src="muzilei-desktop_files/icon10.png" title="百科互动"></span>
+              <div class="text"><span>百科互动</span><s></s></div>
+            </div>
+            <div style="position: absolute; margin: 0px; left: 30px; top: 246px;" class="desktopIcon ui-draggable ui-droppable" id="dubianFim"><span class="icon"><img src="muzilei-desktop_files/icon7.png" title="豆瓣FIM"></span>
+              <div class="text"><span>豆瓣FIM</span><s></s></div>
+            </div>
+            <div style="position: absolute; margin: 0px; left: 30px; top: 359px;" class="desktopIcon ui-draggable ui-droppable" id="Pixlr"><span class="icon"><img src="muzilei-desktop_files/icon6.png" title="Pixlr"></span>
+              <div class="text"><span>Pixlr</span><s></s></div>
+            </div>
+            <div style="position: absolute; margin: 0px; left: 30px; top: 472px;" class="desktopIcon ui-draggable ui-droppable" id="qidian"><span class="icon"><img src="muzilei-desktop_files/icon9.png" title="起点中文"></span>
+              <div class="text"><span>起点中文</span><s></s></div>
+            </div>
+            <div style="position: absolute; margin: 0px; left: 161px; top: 20px;" class="desktopIcon ui-draggable ui-droppable" id="memo"><span class="icon"><img src="muzilei-desktop_files/memo.png" title="便签"></span>
+              <div class="text"><span>便签</span><s></s></div>
+            </div>
+            <div style="position: absolute; margin: 0px; left: 161px; top: 133px;" class="desktopIcon ui-draggable ui-droppable" id="hudong1"><span class="icon"><img src="muzilei-desktop_files/icon10.png" title="百科互动"></span>
+              <div class="text"><span>百科互动</span><s></s></div>
+            </div>
+            <div style="position: absolute; margin: 0px; left: 161px; top: 246px;" class="desktopIcon ui-draggable ui-droppable" id="dubianFim1"><span class="icon"><img src="muzilei-desktop_files/icon7.png" title="豆瓣FIM"></span>
+              <div class="text"><span>豆瓣FIM</span><s></s></div>
+            </div>
+            <div style="position: absolute; margin: 0px; left: 161px; top: 359px;" class="desktopIcon ui-draggable ui-droppable" id="Pixlr1"><span class="icon"><img src="muzilei-desktop_files/icon6.png" title="Pixlr"></span>
+              <div class="text"><span>Pixlr</span><s></s></div>
+            </div>
+            <div style="position: absolute; margin: 0px; left: 161px; top: 472px;" class="desktopIcon ui-draggable ui-droppable" id="qidian1"><span class="icon"><img src="muzilei-desktop_files/icon9.png" title="起点中文"></span>
+              <div class="text"><span>起点中文</span><s></s></div>
+            </div>
+            <div style="position: absolute; margin: 0px; left: 292px; top: 20px;" class="desktopIcon ui-draggable ui-droppable" id="hudong2"><span class="icon"><img src="muzilei-desktop_files/icon10.png" title="百科互动"></span>
+              <div class="text"><span>百科互动</span><s></s></div>
+            </div>
+            <div style="position: absolute; margin: 0px; left: 292px; top: 133px;" class="desktopIcon ui-draggable ui-droppable" id="dubianFim2"><span class="icon">
+              <div class="txInfo">9</div>
+              <img src="muzilei-desktop_files/icon7.png" title="豆瓣FIM"></span>
+              <div class="text"><span>豆瓣FIM</span><s></s></div>
+            </div>
+            <div style="position: absolute; margin: 0px; left: 292px; top: 246px;" class="desktopIcon ui-draggable ui-droppable" id="Pixlr2"><span class="icon"><img src="muzilei-desktop_files/icon6.png" title="Pixlr"></span>
+              <div class="text"><span>Pixlr</span><s></s></div>
+            </div>
+            <div style="position: absolute; margin: 0px; left: 292px; top: 359px;" class="desktopIcon ui-draggable ui-droppable" id="qidian2"><span class="icon"><img src="muzilei-desktop_files/icon9.png" title="起点中文"></span>
+              <div class="text"><span>起点中文</span><s></s></div>
+            </div>
+            <div style="position: absolute; margin: 0px; left: 292px; top: 472px;" class="desktopIcon ui-draggable ui-droppable" id="hudong3"><span class="icon">
+              <div class="txInfo">2</div>
+              <img src="muzilei-desktop_files/icon10.png" title="百科互动"></span>
+              <div class="text"><span>百科互动</span><s></s></div>
+            </div>
+            <div style="position: absolute; margin: 0px; left: 423px; top: 20px;" class="desktopIcon ui-draggable ui-droppable" id="dubianFim3"><span class="icon"><img src="muzilei-desktop_files/icon7.png" title="豆瓣FIM"></span>
+              <div class="text"><span>豆瓣FIM</span><s></s></div>
+            </div>
+            <div style="position: absolute; margin: 0px; left: 423px; top: 133px;" class="desktopIcon ui-draggable ui-droppable" id="Pixlr3"><span class="icon"><img src="muzilei-desktop_files/icon6.png" title="Pixlr"></span>
+              <div class="text"><span>Pixlr</span><s></s></div>
+            </div>
+            <div style="position: absolute; margin: 0px; left: 423px; top: 246px;" class="desktopIcon ui-draggable ui-droppable" id="qidian3"><span class="icon"><img src="muzilei-desktop_files/icon9.png" title="起点中文"></span>
+              <div class="text"><span>起点中文</span><s></s></div>
+            </div>
+            <div style="position: absolute; margin: 0px; left: 423px; top: 359px;" class="desktopIcon ui-draggable ui-droppable" id="hudon4g"><span class="icon">
+              <div class="txInfo">3</div>
+              <img src="muzilei-desktop_files/icon10.png" title="百科互动"></span>
+              <div class="text"><span>百科互动</span><s></s></div>
+            </div>
+            <div style="position: absolute; margin: 0px; left: 423px; top: 472px;" class="desktopIcon ui-draggable ui-droppable" id="dubianFi4m"><span class="icon"><img src="muzilei-desktop_files/icon7.png" title="豆瓣FIM"></span>
+              <div class="text"><span>豆瓣FIM</span><s></s></div>
+            </div>
+            <div style="position: absolute; margin: 0px; left: 554px; top: 20px;" class="desktopIcon ui-draggable ui-droppable" id="Pixlr4"><span class="icon"><img src="muzilei-desktop_files/icon6.png" title="Pixlr"></span>
+              <div class="text"><span>Pixlr</span><s></s></div>
+            </div>
+            <div style="position: absolute; margin: 0px; left: 554px; top: 133px;" class="desktopIcon ui-draggable ui-droppable" id="qidian4"><span class="icon"><img src="muzilei-desktop_files/icon9.png" title="起点中文"></span>
+              <div class="text"><span>起点中文</span><s></s></div>
+            </div>
+            <div style="position: absolute; margin: 0px; left: 554px; top: 246px;" class="desktopIcon ui-draggable ui-droppable" id="hudo5ng"><span class="icon">
+              <div class="txInfo">9</div>
+              <img src="muzilei-desktop_files/icon10.png" title="百科互动"></span>
+              <div class="text"><span>百科互动</span><s></s></div>
+            </div>
+            <div style="position: absolute; margin: 0px; left: 554px; top: 359px;" class="desktopIcon ui-draggable ui-droppable" id="dubian5Fim"><span class="icon"><img src="muzilei-desktop_files/icon7.png" title="豆瓣FIM"></span>
+              <div class="text"><span>豆瓣FIM</span><s></s></div>
+            </div>
+            <div style="position: absolute; margin: 0px; left: 554px; top: 472px;" class="desktopIcon ui-draggable ui-droppable" id="Pix5lr"><span class="icon">
+              <div class="txInfo">7</div>
+              <img src="muzilei-desktop_files/icon6.png" title="Pixlr"></span>
+              <div class="text"><span>Pixlr</span><s></s></div>
+            </div>
+            <div style="position: absolute; margin: 0px; left: 685px; top: 20px;" class="desktopIcon ui-draggable ui-droppable" id="qidia5n"><span class="icon"><img src="muzilei-desktop_files/icon9.png" title="起点中文"></span>
+              <div class="text"><span>起点中文</span><s></s></div>
+            </div>
+            <div style="position: absolute; margin: 0px; left: 685px; top: 133px;" class="desktopIcon ui-draggable ui-droppable" id="hudo6ng"><span class="icon"><img src="muzilei-desktop_files/icon10.png" title="百科互动"></span>
+              <div class="text"><span>百科互动</span><s></s></div>
+            </div>
+            <div style="position: absolute; margin: 0px; left: 685px; top: 246px;" class="desktopIcon ui-draggable ui-droppable" id="dubia6nFim"><span class="icon"><img src="muzilei-desktop_files/icon7.png" title="豆瓣FIM"></span>
+              <div class="text"><span>豆瓣FIM</span><s></s></div>
+            </div>
+            <div style="position: absolute; margin: 0px; left: 685px; top: 359px;" class="desktopIcon ui-draggable ui-droppable" id="Pixl6r"><span class="icon"><img src="muzilei-desktop_files/icon6.png" title="Pixlr"></span>
+              <div class="text"><span>Pixlr</span><s></s></div>
+            </div>
+            <div style="position: absolute; margin: 0px; left: 685px; top: 472px;" class="desktopIcon ui-draggable ui-droppable" id="qidi6an"><span class="icon"><img src="muzilei-desktop_files/icon9.png" title="起点中文"></span>
+              <div class="text"><span>起点中文</span><s></s></div>
+            </div>
+            <div style="position: absolute; margin: 0px; left: 816px; top: 20px;" class="desktopIcon addIcon"><span class="icon"><img src="muzilei-desktop_files/add_icon.png"></span>
+              <div class="text"><span>添加</span><s></s></div>
+            </div>
+          </div>
+          <div style="width: 7px; z-index: 2; position: absolute; top: 0px; right: 0px; display: none; height: 623px; opacity: 0;" id="ascrail2000">
+            <div style="position: relative; top: 0px; float: right; width: 5px; height: 0px; background-color: rgb(102, 102, 102); border: 1px solid rgb(204, 204, 204); background-clip: padding-box; border-radius: 5px 5px 5px 5px;"></div>
+          </div>
+        </div>
+      </div>
+      <div style="width: 1527px; height: 623px;" class="desktop ui-draggable" id="desktop2">
+        <div tabindex="5001" style="width: 1527px; height: 623px; overflow-y: hidden;" class="outerDesktop">
+          <div style="transform: translate3d(0px, 0px, 0px);" class="innerDesktop ui-droppable">
+            <div style="position: absolute; margin: 0px; left: 30px; top: 20px;" class="desktopIcon ui-draggable ui-droppable" id="leshiwang"><span class="icon"><img src="muzilei-desktop_files/icon4.png" title="乐视网"></span>
+              <div class="text"><span>乐视网</span><s></s></div>
+            </div>
+            <div style="position: absolute; margin: 0px; left: 30px; top: 133px;" class="desktopIcon ui-draggable ui-droppable" id="qianqianMusic"><span class="icon">
+              <div class="txInfo">23</div>
+              <img src="muzilei-desktop_files/icon5.png" title="千千音乐"></span>
+              <div class="text"><span>千千音乐</span><s></s></div>
+            </div>
+            <div style="position: absolute; margin: 0px; left: 30px; top: 246px;" class="desktopIcon ui-draggable ui-droppable" id="zfmeishi"><span class="icon"><img src="muzilei-desktop_files/icon13.png" title="主妇美食"></span>
+              <div class="text"><span>主妇美食</span><s></s></div>
+            </div>
+            <div style="position: absolute; margin: 0px; left: 30px; top: 359px;" class="desktopIcon ui-draggable ui-droppable" id="mglv"><span class="icon"><img src="muzilei-desktop_files/icon12.png" title="芒果旅游"></span>
+              <div class="text"><span>芒果旅游</span><s></s></div>
+            </div>
+            <div style="position: absolute; margin: 0px; left: 30px; top: 472px;" class="desktopIcon ui-draggable ui-droppable" id="taobao"><span class="icon"><img src="muzilei-desktop_files/icon14.png" title="淘宝网"></span>
+              <div class="text"><span>淘宝网</span><s></s></div>
+            </div>
+            <div style="position: absolute; margin: 0px; left: 161px; top: 20px;" class="desktopIcon addIcon"><span class="icon"><img src="muzilei-desktop_files/add_icon.png"></span>
+              <div class="text"><span>添加</span><s></s></div>
+            </div>
+          </div>
+          <div style="width: 7px; z-index: 2; position: absolute; top: 0px; right: 0px; display: none; height: 623px; opacity: 0;" id="ascrail2001">
+            <div style="position: relative; top: 0px; float: right; width: 5px; height: 0px; background-color: rgb(102, 102, 102); border: 1px solid rgb(204, 204, 204); background-clip: padding-box; border-radius: 5px 5px 5px 5px;"></div>
+          </div>
+        </div>
+      </div>
+      <div style="width: 1527px; height: 623px;" class="desktop ui-draggable" id="desktop3">
+        <div tabindex="5002" style="width: 1527px; height: 623px; overflow-y: hidden;" class="outerDesktop">
+          <div style="transform: translate3d(0px, 0px, 0px);" class="innerDesktop ui-droppable">
+            <div style="position: absolute; margin: 0px; left: 30px; top: 20px;" class="desktopIcon ui-draggable ui-droppable" id="qingshu"><span class="icon"><img src="muzilei-desktop_files/icon15.png" title="情书"></span>
+              <div class="text"><span>情书</span><s></s></div>
+            </div>
+            <div style="position: absolute; margin: 0px; left: 30px; top: 133px;" class="desktopIcon ui-draggable ui-droppable" id="fenghuang"><span class="icon"><img src="muzilei-desktop_files/icon16.png" title="凤凰网"></span>
+              <div class="text"><span>凤凰网</span><s></s></div>
+            </div>
+            <div style="position: absolute; margin: 0px; left: 30px; top: 246px;" class="desktopIcon ui-draggable ui-droppable" id="zgcun"><span class="icon"><img src="muzilei-desktop_files/icon17.png" title="中关村在线"></span>
+              <div class="text"><span>中关村在线</span><s></s></div>
+            </div>
+            <div style="position: absolute; margin: 0px; left: 30px; top: 359px;" class="desktopIcon ui-draggable ui-droppable" id="suhuqc"><span class="icon"><img src="muzilei-desktop_files/icon18.png" title="搜狐汽车"></span>
+              <div class="text"><span>搜狐汽车</span><s></s></div>
+            </div>
+            <div style="position: absolute; margin: 0px; left: 30px; top: 472px;" class="desktopIcon ui-draggable ui-droppable" id="buddy"><span class="icon"><img src="muzilei-desktop_files/icon19.png" title="布丁电影票"></span>
+              <div class="text"><span>布丁电影票</span><s></s></div>
+            </div>
+            <div style="position: absolute; margin: 0px; left: 161px; top: 20px;" class="desktopIcon addIcon"><span class="icon"><img src="muzilei-desktop_files/add_icon.png"></span>
+              <div class="text"><span>添加</span><s></s></div>
+            </div>
+          </div>
+          <div style="width: 7px; z-index: 2; position: absolute; top: 0px; right: 0px; display: none; height: 623px; opacity: 0;" id="ascrail2002">
+            <div style="position: relative; top: 0px; float: right; width: 5px; height: 0px; background-color: rgb(102, 102, 102); border: 1px solid rgb(204, 204, 204); background-clip: padding-box; border-radius: 5px 5px 5px 5px;"></div>
+          </div>
+        </div>
+      </div>
+      <div style="left: 0px; width: 1527px; height: 623px;" class="desktop currDesktop ui-draggable" id="desktop4">
+        <div tabindex="5003" style="width: 1527px; height: 623px; overflow-y: hidden;" class="outerDesktop">
+          <div style="transform: translate3d(0px, 0px, 0px);" class="innerDesktop ui-droppable">
+            <div style="position: absolute; margin: 0px; left: 30px; top: 20px;" class="desktopIcon ui-draggable ui-droppable" id="jiaoxue"><span class="icon">
+              <div class="txInfo">5</div>
+              <img src="muzilei-desktop_files/icon8.png" title="中国数学资源网"></span>
+              <div class="text"><span>中国数学资源网</span><s></s></div>
+            </div>
+            <div style="position: absolute; margin: 0px; left: 30px; top: 133px;" class="desktopIcon ui-draggable ui-droppable" id="huoying"><span class="icon"><img src="muzilei-desktop_files/icon20.png" title="火影忍者漫画动画"></span>
+              <div class="text"><span>火影忍者漫画动画</span><s></s></div>
+            </div>
+            <div style="position: absolute; margin: 0px; left: 30px; top: 246px;" class="desktopIcon addIcon"><span class="icon"><img src="muzilei-desktop_files/add_icon.png"></span>
+              <div class="text"><span>添加</span><s></s></div>
+            </div>
+          </div>
+          <div style="width: 7px; z-index: 2; position: absolute; top: 0px; right: 0px; display: none; height: 623px; opacity: 0.69192;" id="ascrail2003">
+            <div style="position: relative; top: 0px; float: right; width: 5px; height: 0px; background-color: rgb(102, 102, 102); border: 1px solid rgb(204, 204, 204); background-clip: padding-box; border-radius: 5px 5px 5px 5px;"></div>
+          </div>
+        </div>
+        <div style="width: 140px; height: 230px; left: auto; right: 50px; top: 20px; bottom: auto;" class="myWidget ui-draggable" id="myWidget_shizhong">
+          <div class="widgetTitle">
+            <div class="innerWidgetTitle"><b>时钟</b><span class="widgetBtn"><a href="#" class="widgetClose"></a></span></div>
+          </div>
+          <div style="height: 200px;" class="widgetCon">
+            <iframe src="muzilei-desktop_files/index.htm" allowtransparency="true" frameborder="0" height="100%" scrolling="no" width="100%"></iframe>
+            <div style="display: none;" class="loading">正在加载中...</div>
+            <div class="iframeFix" id="iframeFix_shizhong"></div>
+          </div>
+        </div>
+        <div style="width: 200px; height: 320px; left: auto; right: 20px; top: 260px; bottom: auto;" class="myWidget ui-draggable" id="myWidget_weather">
+          <div class="widgetTitle">
+            <div class="innerWidgetTitle"><b>天气预报</b><span class="widgetBtn"><a href="#" class="widgetClose"></a></span></div>
+          </div>
+          <div style="height: 290px;" class="widgetCon">
+            <iframe src="muzilei-desktop_files/index_002.htm" allowtransparency="true" frameborder="0" height="100%" scrolling="no" width="100%"></iframe>
+            <div style="display: none;" class="loading">正在加载中...</div>
+            <div class="iframeFix" id="iframeFix_weather"></div>
+          </div>
+        </div>
+      </div>
+      <div style="width: 1527px; height: 623px;" class="desktop ui-draggable" id="desktop5">
+        <div tabindex="5004" style="width: 1527px; height: 623px; overflow-y: hidden;" class="outerDesktop">
+          <div style="transform: translate3d(0px, 0px, 0px);" class="innerDesktop ui-droppable">
+            <div style="position: absolute; margin: 0px; left: 30px; top: 20px;" class="desktopIcon ui-draggable ui-droppable" id="xxshuyuan"><span class="icon"><img src="muzilei-desktop_files/icon21.png" title="潇湘书院"></span>
+              <div class="text"><span>潇湘书院</span><s></s></div>
+            </div>
+            <div style="position: absolute; margin: 0px; left: 30px; top: 133px;" class="desktopIcon addIcon"><span class="icon"><img src="muzilei-desktop_files/add_icon.png"></span>
+              <div class="text"><span>添加</span><s></s></div>
+            </div>
+          </div>
+          <div style="width: 7px; z-index: 2; position: absolute; top: 0px; right: 0px; display: none; height: 623px; opacity: 0;" id="ascrail2004">
+            <div style="position: relative; top: 0px; float: right; width: 5px; height: 0px; background-color: rgb(102, 102, 102); border: 1px solid rgb(204, 204, 204); background-clip: padding-box; border-radius: 5px 5px 5px 5px;"></div>
+          </div>
+        </div>
+      </div>
+      <div style="width: 1527px; height: 623px;" class="desktop ui-draggable" id="desktop6">
+        <div tabindex="5005" style="width: 1527px; height: 623px; overflow-y: hidden;" class="outerDesktop">
+          <div style="transform: translate3d(0px, 0px, 0px);" class="innerDesktop ui-droppable">
+            <div style="position: absolute; margin: 0px; left: 30px; top: 20px;" class="desktopIcon addIcon"><span class="icon"><img src="muzilei-desktop_files/add_icon.png"></span>
+              <div class="text"><span>添加</span><s></s></div>
+            </div>
+          </div>
+          <div style="width: 7px; z-index: 2; position: absolute; top: 0px; right: 0px; display: none; height: 623px; opacity: 0;" id="ascrail2005">
+            <div style="position: relative; top: 0px; float: right; width: 5px; height: 0px; background-color: rgb(102, 102, 102); border: 1px solid rgb(204, 204, 204); background-clip: padding-box; border-radius: 5px 5px 5px 5px;"></div>
+          </div>
+        </div>
+      </div>
+      <div style="width: 1527px; height: 623px;" class="desktop ui-draggable" id="desktop7">
+        <div tabindex="5006" style="width: 1527px; height: 623px; overflow-y: hidden;" class="outerDesktop">
+          <div style="transform: translate3d(0px, 0px, 0px);" class="innerDesktop ui-droppable">
+            <div style="position: absolute; margin: 0px; left: 30px; top: 20px;" class="desktopIcon addIcon"><span class="icon"><img src="muzilei-desktop_files/add_icon.png"></span>
+              <div class="text"><span>添加</span><s></s></div>
+            </div>
+          </div>
+          <div style="width: 7px; z-index: 2; position: absolute; top: 0px; right: 0px; display: none; height: 623px; opacity: 0;" id="ascrail2006">
+            <div style="position: relative; top: 0px; float: right; width: 5px; height: 0px; background-color: rgb(102, 102, 102); border: 1px solid rgb(204, 204, 204); background-clip: padding-box; border-radius: 5px 5px 5px 5px;"></div>
+          </div>
+        </div>
+      </div>
+      <div style="width: 1527px; height: 623px;" class="desktop ui-draggable" id="desktop8">
+        <div tabindex="5007" style="width: 1527px; height: 623px; overflow-y: hidden;" class="outerDesktop">
+          <div style="transform: translate3d(0px, 0px, 0px);" class="innerDesktop ui-droppable">
+            <div style="position: absolute; margin: 0px; left: 30px; top: 20px;" class="desktopIcon addIcon"><span class="icon"><img src="muzilei-desktop_files/add_icon.png"></span>
+              <div class="text"><span>添加</span><s></s></div>
+            </div>
+          </div>
+          <div style="width: 7px; z-index: 2; position: absolute; top: 0px; right: 0px; display: none; height: 623px; opacity: 0;" id="ascrail2007">
+            <div style="position: relative; top: 0px; float: right; width: 5px; height: 0px; background-color: rgb(102, 102, 102); border: 1px solid rgb(204, 204, 204); background-clip: padding-box; border-radius: 5px 5px 5px 5px;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="bottomBarBgTask"></div>
+  <div id="taskBlock">
+    <div style="" class="taskNextBox" id="taskNextBox"> <a href="javascript:void(0);" class="taskNext" id="taskNext"></a> </div>
+    <div id="taskOuterBlock">
+      <div id="taskInnnerBlock"> </div>
+    </div>
+    <div id="taskPreBox" class="taskPreBox"> <a href="javascript:void(0);" id="taskPre" class="taskPre"></a> </div>
+  </div>
+  <div class="ui-draggable" style="margin-left: -122px;" id="navBar"><s class="l">
+    <div class="indicator indicator_header" cmd="user" title="编辑个人资料"><img src="muzilei-desktop_files/getface.jpg" alt="编辑个人资料" class="indicator_header_img" id="navbarHeaderImg"></div>
+    </s><span><a class="ui-droppable" href="#" title="桌面1">1</a><a class="ui-droppable" href="#" title="桌面2">2</a><a class="ui-droppable" href="#" title="桌面3">3</a><a href="#" class="currTab ui-droppable" title="桌面4">4</a><a class="ui-droppable" href="#" title="桌面5">5</a><a class="ui-droppable" href="#" title="桌面6">6</a><a class="ui-droppable" href="#" title="桌面7">7</a><a class="ui-droppable" href="#" title="桌面8">8</a></span><s class="r"><a class="indicator indicator_manage" href="javascript:void(0);" hidefocus="true" cmd="manage" title="全局视图"></a></s></div>
+</div>
+<div id="appManagerPanel" class="appManagerPanel"> <a class="aMg_close" href="javascript:void(0);"></a>
+  <div class="aMg_dock_container"></div>
+  <div class="aMg_line_x"></div>
+  <div class="aMg_folder_container">
+    <div class="aMg_folder_innercontainer"></div>
+  </div>
+  <a href="javascript:void(0);" id="aMg_prev"></a> <a href="javascript:void(0);" id="aMg_next"></a> </div>
+</body>
+</html>
